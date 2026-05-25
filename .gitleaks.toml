@@ -1,0 +1,10 @@
+title = "RustUse Gitleaks configuration"
+
+[extend]
+useDefault = true
+
+# Keep allowlists narrow and reviewed.
+# Prefer, in order:
+# 1. `gitleaks:allow` for explicit inline test fixtures.
+# 2. rule-scoped allowlists in this file for stable repository fixtures.
+# 3. `.gitleaksignore` fingerprints only for historical findings that cannot be removed immediately.

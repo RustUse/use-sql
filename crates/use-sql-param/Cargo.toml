@@ -1,0 +1,21 @@
+[package]
+name = "use-sql-param"
+description = "SQL parameter placeholder style, index, and name primitives for RustUse"
+publish = true
+authors.workspace = true
+version.workspace = true
+edition.workspace = true
+homepage.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+readme = "README.md"
+documentation = "https://docs.rs/use-sql-param"
+keywords = ["sql", "parameter", "placeholder", "rustuse"]
+categories = ["database", "data-structures", "development-tools"]
+
+[dependencies]
+use-sql-ident.workspace = true
+
+[lints]
+workspace = true

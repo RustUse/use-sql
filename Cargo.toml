@@ -1,0 +1,89 @@
+[workspace]
+members = [
+    "crates/use-sql",
+    "crates/use-sql-ident",
+    "crates/use-sql-keyword",
+    "crates/use-sql-dialect",
+    "crates/use-sql-type",
+    "crates/use-sql-value",
+    "crates/use-sql-param",
+    "crates/use-sql-table",
+    "crates/use-sql-column",
+    "crates/use-sql-schema",
+    "crates/use-sql-operator",
+    "crates/use-sql-expression",
+    "crates/use-sql-clause",
+    "crates/use-sql-query",
+    "crates/use-sql-constraint",
+]
+resolver = "2"
+
+[workspace.package]
+authors = ["RustUse Contributors"]
+edition = "2024"
+homepage = "https://rustuse.org"
+license = "MIT OR Apache-2.0"
+documentation = "https://rustuse.org"
+publish = false
+readme = "README.md"
+repository = "https://github.com/RustUse/use-sql"
+rust-version = "1.95.0"
+version = "0.1.0"
+
+[workspace.dependencies]
+use-sql-ident = { version = "0.1.0", path = "crates/use-sql-ident" }
+use-sql-keyword = { version = "0.1.0", path = "crates/use-sql-keyword" }
+use-sql-dialect = { version = "0.1.0", path = "crates/use-sql-dialect" }
+use-sql-type = { version = "0.1.0", path = "crates/use-sql-type" }
+use-sql-value = { version = "0.1.0", path = "crates/use-sql-value" }
+use-sql-param = { version = "0.1.0", path = "crates/use-sql-param" }
+use-sql-table = { version = "0.1.0", path = "crates/use-sql-table" }
+use-sql-column = { version = "0.1.0", path = "crates/use-sql-column" }
+use-sql-schema = { version = "0.1.0", path = "crates/use-sql-schema" }
+use-sql-operator = { version = "0.1.0", path = "crates/use-sql-operator" }
+use-sql-expression = { version = "0.1.0", path = "crates/use-sql-expression" }
+use-sql-clause = { version = "0.1.0", path = "crates/use-sql-clause" }
+use-sql-query = { version = "0.1.0", path = "crates/use-sql-query" }
+use-sql-constraint = { version = "0.1.0", path = "crates/use-sql-constraint" }
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
+cargo = { level = "warn", priority = -1 }
+doc_markdown = "allow"
+derivable_impls = "allow"
+expect_used = "allow"
+missing_const_for_fn = "allow"
+missing_errors_doc = "allow"
+module_name_repetitions = "allow"
+must_use_candidate = "allow"
+multiple_crate_versions = "allow"
+return_self_not_must_use = "allow"
+nursery = { level = "warn", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+todo = "deny"
+unimplemented = "deny"
+unwrap_used = "warn"
+
+[workspace.metadata.rustuse.release]
+publish = false
+versioning = "lockstep-0.x"
+first-publish-candidates = [
+    "use-sql-ident",
+    "use-sql-keyword",
+    "use-sql-dialect",
+    "use-sql-type",
+    "use-sql-value",
+    "use-sql-param",
+    "use-sql-schema",
+    "use-sql-table",
+    "use-sql-column",
+    "use-sql-operator",
+    "use-sql-expression",
+    "use-sql-clause",
+    "use-sql-query",
+    "use-sql-constraint",
+    "use-sql",
+]

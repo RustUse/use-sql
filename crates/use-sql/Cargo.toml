@@ -1,0 +1,80 @@
+[package]
+name = "use-sql"
+description = "Feature-gated facade crate for RustUse SQL primitives"
+publish = true
+autoexamples = false
+authors.workspace = true
+version.workspace = true
+edition.workspace = true
+homepage.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+readme = "README.md"
+documentation = "https://docs.rs/use-sql"
+keywords = ["sql", "facade", "primitive", "rustuse"]
+categories = ["database", "data-structures", "development-tools"]
+
+[package.metadata.docs.rs]
+all-features = true
+
+[features]
+default = ["full"]
+ident = ["dep:use-sql-ident"]
+keyword = ["dep:use-sql-keyword"]
+dialect = ["dep:use-sql-dialect"]
+ty = ["dep:use-sql-type"]
+value = ["dep:use-sql-value"]
+param = ["dep:use-sql-param"]
+table = ["dep:use-sql-table"]
+column = ["dep:use-sql-column"]
+schema = ["dep:use-sql-schema"]
+operator = ["dep:use-sql-operator"]
+expression = ["dep:use-sql-expression"]
+clause = ["dep:use-sql-clause"]
+query = ["dep:use-sql-query"]
+constraint = ["dep:use-sql-constraint"]
+full = [
+    "ident",
+    "keyword",
+    "dialect",
+    "ty",
+    "value",
+    "param",
+    "table",
+    "column",
+    "schema",
+    "operator",
+    "expression",
+    "clause",
+    "query",
+    "constraint",
+]
+
+[dependencies]
+use-sql-ident = { workspace = true, optional = true }
+use-sql-keyword = { workspace = true, optional = true }
+use-sql-dialect = { workspace = true, optional = true }
+use-sql-type = { workspace = true, optional = true }
+use-sql-value = { workspace = true, optional = true }
+use-sql-param = { workspace = true, optional = true }
+use-sql-table = { workspace = true, optional = true }
+use-sql-column = { workspace = true, optional = true }
+use-sql-schema = { workspace = true, optional = true }
+use-sql-operator = { workspace = true, optional = true }
+use-sql-expression = { workspace = true, optional = true }
+use-sql-clause = { workspace = true, optional = true }
+use-sql-query = { workspace = true, optional = true }
+use-sql-constraint = { workspace = true, optional = true }
+
+[[test]]
+name = "facade"
+required-features = ["full"]
+
+[[example]]
+name = "sql_basic_usage"
+path = "examples/basic_usage.rs"
+required-features = ["full"]
+
+[lints]
+workspace = true

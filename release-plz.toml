@@ -1,0 +1,117 @@
+[workspace]
+release = false
+release_always = false
+changelog_update = false
+pr_labels = ["release"]
+max_analyze_commits = 2000
+
+[[package]]
+name = "use-sql-ident"
+release = true
+version_group = "rustuse-sql"
+
+[[package]]
+name = "use-sql-keyword"
+release = true
+version_group = "rustuse-sql"
+
+[[package]]
+name = "use-sql-dialect"
+release = true
+version_group = "rustuse-sql"
+
+[[package]]
+name = "use-sql-type"
+release = true
+version_group = "rustuse-sql"
+
+[[package]]
+name = "use-sql-value"
+release = true
+version_group = "rustuse-sql"
+
+[[package]]
+name = "use-sql-param"
+release = true
+version_group = "rustuse-sql"
+
+[[package]]
+name = "use-sql-schema"
+release = true
+version_group = "rustuse-sql"
+
+[[package]]
+name = "use-sql-table"
+release = true
+version_group = "rustuse-sql"
+
+[[package]]
+name = "use-sql-column"
+release = true
+version_group = "rustuse-sql"
+
+[[package]]
+name = "use-sql-operator"
+release = true
+version_group = "rustuse-sql"
+
+[[package]]
+name = "use-sql-expression"
+release = true
+version_group = "rustuse-sql"
+
+[[package]]
+name = "use-sql-clause"
+release = true
+version_group = "rustuse-sql"
+
+[[package]]
+name = "use-sql-query"
+release = true
+version_group = "rustuse-sql"
+
+[[package]]
+name = "use-sql-constraint"
+release = true
+version_group = "rustuse-sql"
+
+[[package]]
+name = "use-sql"
+release = true
+version_group = "rustuse-sql"
+changelog_update = true
+changelog_path = "./CHANGELOG.md"
+changelog_include = [
+    "use-sql-ident",
+    "use-sql-keyword",
+    "use-sql-dialect",
+    "use-sql-type",
+    "use-sql-value",
+    "use-sql-param",
+    "use-sql-schema",
+    "use-sql-table",
+    "use-sql-column",
+    "use-sql-operator",
+    "use-sql-expression",
+    "use-sql-clause",
+    "use-sql-query",
+    "use-sql-constraint",
+]
+
+[changelog]
+header = """# Changelog
+
+## Unreleased
+"""
+protect_breaking_commits = true
+sort_commits = "oldest"
+commit_parsers = [
+    { message = "^feat(?:\\([^)]+\\))?!?: .+", group = "Added" },
+    { message = "^fix(?:\\([^)]+\\))?!?: .+", group = "Fixed" },
+    { message = "^security(?:\\([^)]+\\))?!?: .+", group = "Security" },
+    { message = "^(?:refactor|perf|change)(?:\\([^)]+\\))?!?: .+", group = "Changed" },
+    { message = "^docs(?:\\([^)]+\\))?!?: .+", group = "Documentation" },
+    { message = "^(?:build|ci|chore|deps|test)(?:\\([^)]+\\))?!?: .+", group = "Tooling" },
+    { footer = "^changelog: ?ignore$", skip = true },
+    { message = "^.*", group = "Changed" },
+]

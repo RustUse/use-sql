@@ -1,0 +1,27 @@
+name: Cargo Deny
+
+on:
+    pull_request:
+    push:
+        branches:
+            - main
+    workflow_dispatch:
+
+permissions:
+    contents: read
+
+jobs:
+    deny:
+        name: cargo deny
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out repository
+              uses: actions/checkout@v6
+
+            - name: Install cargo-deny
+              uses: taiki-e/install-action@v2
+              with:
+                  tool: cargo-deny
+
+            - name: Run cargo deny
+              run: cargo deny check
